@@ -60,6 +60,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <p>New Branch</p>
 
         <div className='flex flex-col justify-center'>
           <input className='bg-transparent border px-4 py-2 text-sm ' placeholder='E-mail' type="text" />
