@@ -12,6 +12,7 @@
     ScrollRestoration
   } from "react-router-dom";
 import { Suspense } from 'react';
+import Products from './components/Products';
 
 const loading = () => (<div className="">
     <h1 className=' text-black'>Loading...</h1>
@@ -28,6 +29,7 @@ const loading = () => (<div className="">
     return (
       <Suspense fallback={loading()}>
         <Header />
+        <ScrollRestoration />
         <Outlet />
         <Footer />
       </Suspense>
@@ -44,6 +46,10 @@ const loading = () => (<div className="">
           element: <Home />,
           ErrorBoundary: Error,
           loader:productsData,
+        },
+        {
+          path: "/product/:id",
+          element:<Products />
         },
         {
           path: "/cart",

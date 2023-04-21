@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {cart} from '../assets'
 import {BiX} from 'react-icons/bi'
 import {FaHamburger} from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -13,7 +14,7 @@ const Header = () => {
     return (<div className='w-full h-20 bg-white border-b-[1px] border-b-gray-800 sticky top-0 z-50'>
         <div className='max-w-screen-xl h-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between'>
             <div>
-                <p className='text-2xl text-black font-bold'>KARAKATA</p>
+                <Link to={'/'} className='text-2xl text-black font-bold'>KARAKATA</Link>
             </div>
             <div className='flex items-center gap-8'>
                 <ul className='hidden lg:flex items-center gap-8'>
