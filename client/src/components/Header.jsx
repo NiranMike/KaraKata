@@ -3,8 +3,10 @@ import {cart} from '../assets'
 import {BiX} from 'react-icons/bi'
 import {FaHamburger} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
+    const productsData = useSelector((state)=> state.cart.productsData)
     const [drawerOpen, setDrawerOpen] = useState(false)
 
     const toggleDrawer = () => {
@@ -24,12 +26,12 @@ const Header = () => {
                     <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-4 decoration-[2px] cursor-pointer duration-300'>Element</li>
                     <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-4 decoration-[2px] cursor-pointer duration-300'>Blog</li>
                 </ul>
-                <div className='relative'>
+                <Link to={'/cart'} className='relative'>
                     <img className=''
                         src={cart}
                         alt='Cart'/>
-                    <span className='absolute bg-gray-300 rounded-full w-6 h-6 top-4 left-3 text-sm flex items-center justify-center font-semibold'>0</span>
-                </div>
+                    <span className='absolute bg-gray-300 rounded-full w-6 h-6 top-4 left-3 text-sm flex items-center justify-center font-semibold'>{ productsData.length}</span>
+                </Link>
                 <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmChuf7U9Z2ilFHSWlM0KuV_iyNuss5hTEoA&usqp=CAU' alt='User avatar' className='w-8 h-8 rounded-full'/>
                 <button className='lg:hidden z-10 text-black font-bold'
                     onClick={toggleDrawer}>
@@ -47,6 +49,7 @@ const Header = () => {
                   <BiX onClick={toggleDrawer} className='m-4 cursor-pointer' size={32} />
                 </div>
               )}
+              
             </div>
         </div>
       </div>
