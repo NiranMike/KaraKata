@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { MdOutlineStar } from 'react-icons/md';
 import { useLocation } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
-import {addToCart} from "../redux/cartSlice"
+import { addToCart } from "../redux/cartSlice"
+import { deleteItem, decrementQuantity, incremeantQuantity } from '../redux/cartSlice'
 import {ToastContainer, toast} from "react-toastify"
 
 

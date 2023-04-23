@@ -1,5 +1,4 @@
   import React from 'react';
-  import ErrorBoundary from './pages/ErrorBoundary';
   import { productsData } from "./api/fetchData";
   import Footer from "./components/Footer";
   import Header from "./components/Header";
