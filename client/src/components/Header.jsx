@@ -32,7 +32,7 @@ const Header = () => {
                         alt='Cart'/>
                     <span className='absolute bg-gray-300 rounded-full w-6 h-6 top-4 left-3 text-sm flex items-center justify-center font-semibold'>{ productsData.length}</span>
                 </Link>
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmChuf7U9Z2ilFHSWlM0KuV_iyNuss5hTEoA&usqp=CAU' alt='User avatar' className='w-8 h-8 rounded-full'/>
+                <Link to={'/login'}><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmChuf7U9Z2ilFHSWlM0KuV_iyNuss5hTEoA&usqp=CAU' alt='User avatar' className='w-8 h-8 rounded-full'/></Link>
                 <button className='lg:hidden z-10 text-black font-bold'
                     onClick={toggleDrawer}>
                     {drawerOpen ?<BiX/> : <FaHamburger />}

@@ -18,39 +18,39 @@ const CartItems = () => {
         </div>
         <div>
             {
-                  productData.map((item) => (
-                    <div key={item._id} className='flex items-center justify-between gap-6 mt-6'>
-                        <div className='flex items-center gap-2'>
-                            <MdOutlineClose onClick={()=>dispatch(deleteItem({_id: item._id}))&&toast.error(`${item.title} is removed`)} className='text-xl text-gray-600 hover:text-red-600 
-                            cursor-pointer duration-300'/>
-                              <img
-                                  src={item.image}
-                                  alt="productImg" 
-                                  className='w-32 h-32 object-cover'
-                                  />
-                        </div>
-                          <h2 className='w-52'>{ item.title }</h2>
-                          <p className='w-10'>${(item.price).toLocaleString()}</p>
-                          <div className='w-52 flex items-center justify-between text-gray-500 gap-4 border p-3'>
-                          <p className='text-sm'>Quantity</p>
-                          <div className='flex items-center gap-4 text-sm font-semibold'>
-                              <button
-                                  onClick={() => dispatch(decrementQuantity({_id: item._id, }))}
-                              className='flex items-center gap-4 text-sm font-semibold
-                              justify-center px-2 hover:bg-gray-700 hover:text-white 
-                              cursor-pointer duration-300 active:bg-black'>-</button>
-                              <span>({item.quantity})</span>
-                              <button
-                              onClick={() => dispatch(incremeantQuantity({_id: item._id, }))}
-                              className='flex items-center gap-4 text-sm font-semibold
-                              justify-center px-2 hover:bg-gray-700 hover:text-white 
-                              cursor-pointer duration-300 active:bg-black'>+</button>
-                          </div>
-                      </div>
-                      <p className='w-14'>${(item.quantity * item.price).toLocaleString()}</p>
+              productData.map((item) => (
+                <div key={item._id} className='flex items-center justify-between gap-6 mt-6'>
+                    <div className='flex items-center gap-2'>
+                        <MdOutlineClose onClick={()=>dispatch(deleteItem({_id: item._id}))&&toast.error(`${item.title} is removed`)} className='text-xl text-gray-600 hover:text-red-600 
+                        cursor-pointer duration-300'/>
+                          <img
+                              src={item.image}
+                              alt="productImg" 
+                              className='w-32 h-32 object-cover'
+                              />
                     </div>
-                ))
-            }
+                      <h2 className='w-52'>{ item.title }</h2>
+                      <p className='w-10'>${(item.price).toLocaleString()}</p>
+                      <div className='w-52 flex items-center justify-between text-gray-500 gap-4 border p-3'>
+                      <p className='text-sm'>Quantity</p>
+                      <div className='flex items-center gap-4 text-sm font-semibold'>
+                          <button
+                              onClick={() => dispatch(decrementQuantity({_id: item._id, }))}
+                          className='flex items-center gap-4 text-sm font-semibold
+                          justify-center px-2 hover:bg-gray-700 hover:text-white 
+                          cursor-pointer duration-300 active:bg-black'>-</button>
+                          <span>({item.quantity})</span>
+                          <button
+                          onClick={() => dispatch(incremeantQuantity({_id: item._id, }))}
+                          className='flex items-center gap-4 text-sm font-semibold
+                          justify-center px-2 hover:bg-gray-700 hover:text-white 
+                          cursor-pointer duration-300 active:bg-black'>+</button>
+                      </div>
+                  </div>
+                  <p className='w-14'>${(item.quantity * item.price).toLocaleString()}</p>
+                </div>
+            ))
+        }
         </div>
       <button
         onClick={()=>dispatch(resetCart()) && toast.error("Your cart is Empty")}
